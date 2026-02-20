@@ -1,6 +1,6 @@
 ---
-name: notion-sync
-description: Sync Markdown content to Notion with proper formatting. Converts Markdown to Notion blocks, handles bold/italic, tables as lists, and supports page creation and updates.
+name: notion-md-converter
+description: Markdown and Notion format conversion skill. Converts Markdown to Notion blocks, handles bold/italic, tables as lists, and supports page creation and updates.
 homepage: https://developers.notion.com
 metadata:
   {
@@ -9,9 +9,9 @@ metadata:
   }
 ---
 
-# notion-sync
+# notion-md-converter
 
-Sync Markdown content to Notion with proper formatting.
+Markdown and Notion format conversion, with current support focused on Markdown -> Notion.
 
 ## Features
 
@@ -30,7 +30,7 @@ Sync Markdown content to Notion with proper formatting.
 
 1. Go to https://www.notion.so/my-integrations
 2. Click "+ New integration"
-3. Name it (e.g., "OpenClaw Sync")
+3. Name it (e.g., "OpenClaw Converter")
 4. Copy the API key (starts with `ntn_`)
 
 ### 2. Store API Key
@@ -48,7 +48,7 @@ export NOTION_API_KEY="ntn_your_key_here"
 
 ### 3. Share Pages with Integration
 
-Open your Notion page → Click "..." → "Connect to" → Select your integration
+Open your Notion page -> Click "..." -> "Connect to" -> Select your integration
 
 ## Usage
 
@@ -56,19 +56,19 @@ Open your Notion page → Click "..." → "Connect to" → Select your integrati
 
 ```bash
 # From file
-notion-sync create --file README.md --title "My Page"
+notion-md-converter create --file README.md --title "My Page"
 
 # From stdin
-echo "# Hello" | notion-sync create --title "Test Page"
+echo "# Hello" | notion-md-converter create --title "Test Page"
 
 # To specific parent page
-notion-sync create --file report.md --parent-page-id "abc123..."
+notion-md-converter create --file report.md --parent-page-id "abc123..."
 ```
 
 ### Add Content to Existing Page
 
 ```bash
-notion-sync append --file notes.md --page-id "abc123..."
+notion-md-converter append --file notes.md --page-id "abc123..."
 ```
 
 ### Options
@@ -79,6 +79,8 @@ notion-sync append --file notes.md --page-id "abc123..."
 --parent-id    Parent page ID for nesting
 --emoji        Page icon emoji (default: 📄)
 ```
+
+Legacy command alias: `notion-sync` (kept for compatibility).
 
 ## Notion Block Mapping
 
@@ -103,7 +105,7 @@ notion-sync append --file notes.md --page-id "abc123..."
 ### Create a Page from File
 
 ```bash
-notion-sync create \
+notion-md-converter create \
   --file "/path/to/report.md" \
   --title "Weekly Report" \
   --emoji "📊"
@@ -112,7 +114,7 @@ notion-sync create \
 ### Append to Existing Page
 
 ```bash
-notion-sync append \
+notion-md-converter append \
   --file "new-section.md" \
   --page-id "550e8400-e29b-41d4-a716-446655440000"
 ```
@@ -120,7 +122,7 @@ notion-sync append \
 ### Pipeline Usage
 
 ```bash
-cat notes.md | notion-sync create --title "Meeting Notes"
+cat notes.md | notion-md-converter create --title "Meeting Notes"
 ```
 
 ## Configuration

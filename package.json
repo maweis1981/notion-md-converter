@@ -1,18 +1,20 @@
 {
-  "name": "notion-sync",
+  "name": "notion-md-converter",
   "version": "1.0.0",
-  "description": "Sync Markdown content to Notion with proper formatting",
+  "description": "Convert Markdown and Notion-friendly content formats",
   "main": "notion-sync.py",
   "bin": {
+    "notion-md-converter": "notion-sync.py",
     "notion-sync": "notion-sync.py"
   },
   "scripts": [
+    "notion-md-converter",
     "notion-sync"
   ],
   "keywords": [
     "notion",
     "markdown",
-    "sync",
+    "convert",
     "automation"
   ],
   "author": "OpenClaw",

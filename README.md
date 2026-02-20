@@ -1,6 +1,11 @@
-# notion-sync
+# notion-md-converter
 
-Sync Markdown content to Notion with proper formatting.
+Convert between Markdown and Notion-friendly content formats.
+Current implementation focuses on Markdown -> Notion block conversion.
+
+## Core Purpose
+
+This project is a format conversion tool for Markdown and Notion content.
 
 ## Features
 
@@ -11,14 +16,14 @@ Sync Markdown content to Notion with proper formatting.
 - Horizontal rules as dividers
 - Code blocks with syntax highlighting
 - Link detection
-- Create pages or append to existing pages
+- Create pages or append to existing pages in Notion
 
 ## Installation
 
 ### Via ClawHub
 
 ```bash
-clawhub install notion-sync
+clawhub install notion-md-converter
 ```
 
 ### Manual
@@ -33,13 +38,13 @@ pip install requests
 
 ```bash
 # Create page from file
-notion-sync create --file report.md --title "Weekly Report"
+notion-md-converter create --file report.md --title "Weekly Report"
 
 # Append to existing page
-notion-sync append --file notes.md --page-id "abc123..."
+notion-md-converter append --file notes.md --page-id "abc123..."
 
 # From stdin
-cat file.md | notion-sync create --title "My Page"
+cat file.md | notion-md-converter create --title "My Page"
 ```
 
 ### Options
@@ -51,6 +56,8 @@ cat file.md | notion-sync create --title "My Page"
 --emoji, -e      Page emoji (default: 📄)
 --list           List pages
 ```
+
+Legacy command alias: `notion-sync` (kept for compatibility).
 
 ## Notion Block Mapping
 
