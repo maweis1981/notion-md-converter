@@ -1,0 +1,23 @@
+{
+  "name": "notion-sync",
+  "version": "1.0.0",
+  "description": "Sync Markdown content to Notion with proper formatting",
+  "main": "notion-sync.py",
+  "bin": {
+    "notion-sync": "notion-sync.py"
+  },
+  "scripts": [
+    "notion-sync"
+  ],
+  "keywords": [
+    "notion",
+    "markdown",
+    "sync",
+    "automation"
+  ],
+  "author": "OpenClaw",
+  "license": "MIT",
+  "dependencies": [
+    "requests>=2.25.0"
+  ]
+}
