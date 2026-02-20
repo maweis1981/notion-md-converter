@@ -1,0 +1,25 @@
+{
+  "name": "notion-md-converter",
+  "version": "1.0.0",
+  "description": "Convert Markdown and Notion-friendly content formats",
+  "main": "notion-sync.py",
+  "bin": {
+    "notion-md-converter": "notion-sync.py",
+    "notion-sync": "notion-sync.py"
+  },
+  "scripts": [
+    "notion-md-converter",
+    "notion-sync"
+  ],
+  "keywords": [
+    "notion",
+    "markdown",
+    "convert",
+    "automation"
+  ],
+  "author": "OpenClaw",
+  "license": "MIT",
+  "dependencies": [
+    "requests>=2.25.0"
+  ]
+}
